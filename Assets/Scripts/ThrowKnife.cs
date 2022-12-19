@@ -23,21 +23,20 @@ public class ThrowKnife : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("Hit Enemy");
+
         if (other.gameObject.CompareTag("Enemy"))
         {
+            print("Hit Enemy");
             Destroy(this.gameObject);
         }
 
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        print("Hit Object");
-        if (col.gameObject.CompareTag("Hit"))
+        if (other.gameObject.CompareTag("Hit"))
         {
+            print("Hit Enviroment");
             Destroy(this.gameObject);
         }
+
     }
+
 
 }
